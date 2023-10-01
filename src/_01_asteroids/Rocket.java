@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Rocket implements GameControlScene {
-
+    
 	double acceleration = 15;
 	double torque = 15;
 	double angle = 0;
@@ -17,7 +17,7 @@ public class Rocket implements GameControlScene {
 	boolean accelerate = false;
 	boolean deccelerate = false;
 	boolean fire = false;
-	boolean restart = false;
+	boolean restart = false ;
 
 	/*
 	 * 2. A constructor does not have a return type and must be named the same as
