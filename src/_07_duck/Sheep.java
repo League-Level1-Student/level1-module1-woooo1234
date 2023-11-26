@@ -1,9 +1,9 @@
 package _07_duck;
 
-public class Duck {
+public class Sheep {
 	int numberOfEnemies;
 	String favoriteTimeOfDay;
-	Duck(String favoriteTimeOfDay, int numberOfEnemies) {
+	Sheep(String favoriteTimeOfDay, int numberOfEnemies) {
 	       this.numberOfEnemies = numberOfEnemies;
 	       this.favoriteTimeOfDay = favoriteTimeOfDay;
 	       
