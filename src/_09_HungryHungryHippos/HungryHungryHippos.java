@@ -56,13 +56,16 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
     Color boardColor = new Color(138, 198, 193);
     Game gameFrame = new Game("Hungry Hungry Hippos");
     boolean startGame = false;
-
+    
     /*
      * Create your hippo objects here. The "left" input parameter indicates
      * which side the hippo is drawn.
      */
-    Hippo myHippoObject = new Hippo("left");
-
+    Hippo myHippoObject = new Hippo("left", new Color(160, 32, 240),"Lizzie");
+    Hippo myHippoColor = new Hippo("right", new Color(255, 165, 0),"Henry");
+    Hippo myHippoColor2 = new Hippo("up", new Color(160, 32, 240),"Homer");
+    Hippo myHippoObject2 = new Hippo("down", new Color(254, 254, 51), "Harry");
+    
     public HungryHungryHippos() {
         gameFrame.setScene(this);
         gameFrame.start();
@@ -97,7 +100,9 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
          * Draw all the hippos here
          */
         myHippoObject.draw(g);
-        
+        myHippoColor.draw(g);
+        myHippoColor2.draw(g);
+        myHippoObject2.draw(g);
         if (startGame) {
             /*
              * Move all the melons
@@ -110,26 +115,31 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
              * this for all of your hippos!
              */
             checkHippoEating(myHippoObject);
+            checkHippoEating(myHippoColor2);
+            checkHippoEating(myHippoObject2);
+            checkHippoEating(myHippoColor);
         }
+       
     }
 
     @Override
     public void keyPressed(KeyEvent event) {
         int keyCode = event.getKeyCode();
-
+        	
         /*
          * Bind a key to make your hippos eat
          */
         if (keyCode == KeyEvent.VK_S) {
             startGame = true;
+            
         } else if (keyCode == KeyEvent.VK_1) {
             myHippoObject.eat();
         } else if (keyCode == KeyEvent.VK_2) {
-            
+            myHippoColor.eat();
         } else if (keyCode == KeyEvent.VK_3) {
-            
+            myHippoColor2.eat();
         } else if (keyCode == KeyEvent.VK_4) {
-            
+            myHippoObject2.eat();
         }
     }
     
