@@ -273,7 +273,9 @@ player2 = new Player(50,25,10,30, Color.red.getRGB(), W, A, S, D);
         // 13. Call the displayStats method.
         displayStats();
         // 14. If gameOver is true call the endGame method.
-        if ()
+        if (gameOver = true) {
+        	endGame();
+        }
     }
 
     @Override
@@ -282,7 +284,8 @@ player2 = new Player(50,25,10,30, Color.red.getRGB(), W, A, S, D);
          * 15. Call the enableMovement method for both players and pass keyCode
          * to the method.
          */        
-
+player1.enableMovement(keyCode);
+player2.enableMovement(keyCode);
     }
 
     @Override
@@ -291,7 +294,8 @@ player2 = new Player(50,25,10,30, Color.red.getRGB(), W, A, S, D);
          * 16. Call the disableMovement method for both players and pass keyCode
          * to the method.
          */
-
+    	player1.disableMovement(keyCode);
+    	player2.disableMovement(keyCode);
     }
 
     /*
